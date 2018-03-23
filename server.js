@@ -18,7 +18,10 @@ app.get('/', (request, response) => {
 });
 
 app.get('/about', (request, response) => {
-  response.send('<h1>About</h1>')
+  response.render('about.hbs', {
+    title: 'About',
+    currentYear: new Date().getFullYear()
+  });
 });
 
 app.get('/error', (request, response) => {
