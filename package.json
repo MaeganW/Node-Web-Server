@@ -1,0 +1,23 @@
+{
+  "name": "node-web-server",
+  "version": "1.0.0",
+  "description": "Creating a custom API using Node.js and Express.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaeganW/Node-Web-Server.git"
+  },
+  "author": "Maegan Womble",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaeganW/Node-Web-Server/issues"
+  },
+  "homepage": "https://github.com/MaeganW/Node-Web-Server#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "hbs": "^4.0.1"
+  }
+}
