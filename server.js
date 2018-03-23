@@ -2,10 +2,6 @@ const express = require('express');
 const hbs = require('hbs');
 const app = express();
 
-hbs.registerPartials(__dirname + '/views/partials');
-app.set('view engine', 'hbs');
-app.use(express.static(__dirname + '/public'));
-
 hbs.registerHelper('getCurrentYear', () => {
   return new Date().getFullYear();
 })
@@ -13,6 +9,11 @@ hbs.registerHelper('getCurrentYear', () => {
 hbs.registerHelper('allCaps', (text) => {
   return text.toUpperCase();
 })
+
+hbs.registerPartials(__dirname + '/views/partials');
+
+app.set('view engine', 'hbs');
+app.use(express.static(__dirname + '/public'));
 
 // app.get('/', (request, response) => {
 //   // response.send('<h1>Hello World!</h1>');
