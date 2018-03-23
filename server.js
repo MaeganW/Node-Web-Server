@@ -24,6 +24,14 @@ app.get('/about', (request, response) => {
   });
 });
 
+app.get('/home', (request, response) => {
+  response.render('home.hbs', {
+    title: 'Home',
+    currentYear: new Date().getFullYear(),
+    currentUser: 'Maegan'
+  })
+})
+
 app.get('/error', (request, response) => {
   response.send({
     errorMsg: 'Could not find page.'
