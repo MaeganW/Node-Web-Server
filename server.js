@@ -10,6 +10,10 @@ hbs.registerHelper('getCurrentYear', () => {
   return new Date().getFullYear();
 })
 
+hbs.registerHelper('allCaps', (text) => {
+  return text.toUpperCase();
+})
+
 // app.get('/', (request, response) => {
 //   // response.send('<h1>Hello World!</h1>');
 //   response.send({
