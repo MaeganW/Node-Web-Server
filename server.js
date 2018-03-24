@@ -16,7 +16,6 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 
 // app.use is how you use middleware in express
-app.use(express.static(__dirname + '/public'));
 app.use((req, res, next) => {
   const now = new Date().toString();
   const log = `${now}: ${req.method} ${req.url}`
@@ -29,9 +28,12 @@ app.use((req, res, next) => {
   next();
 })
 
-app.use((req, res, next) => {
-  res.render('maintenance.hbs');
-})
+// app.use((req, res, next) => {
+//   res.render('maintenance.hbs');
+// })
+
+// The use of the static files must be after the maintenance middleware
+app.use(express.static(__dirname + '/public'));
 
 // app.get('/', (request, response) => {
 //   // response.send('<h1>Hello World!</h1>');
